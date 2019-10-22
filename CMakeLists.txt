@@ -51,7 +51,8 @@ add_message_files(
 # Generate services in the 'srv' folder
 add_service_files(
   FILES
-  GetPoses.srv
+  GetKey.srv
+  GetPose.srv
 )
 
 ## Generate actions in the 'action' folder
