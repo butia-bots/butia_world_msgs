@@ -1,3 +1,5 @@
 string query
+float64 threshold
 ---
 string key
+bool success
