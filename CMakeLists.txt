@@ -7,7 +7,7 @@ project(butia_world_msgs)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS geometry_msgs genmsg message_generation)
+find_package(catkin REQUIRED COMPONENTS std_msgs vision_msgs geometry_msgs sensor_msgs genmsg message_generation)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -46,6 +46,7 @@ find_package(catkin REQUIRED COMPONENTS geometry_msgs genmsg message_generation)
 add_message_files(
   FILES
   DBPose.msg
+
 )
 
 # Generate services in the 'srv' folder
@@ -53,6 +54,8 @@ add_service_files(
   FILES
   GetKey.srv
   GetPose.srv
+  RedisCacheReaderSrv.srv
+  RedisCacheWriterSrv.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -66,6 +69,8 @@ add_service_files(
 generate_messages(
   DEPENDENCIES
   geometry_msgs
+  std_msgs
+  butia_vision_msgs
 )
 
 ################################################
@@ -97,9 +102,7 @@ generate_messages(
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
- CATKIN_DEPENDS geometry_msgs
-)
+catkin_package(CATKIN_DEPENDS geometry_msgs std_msgs butia_vision_msgs)
 
 ###########
 ## Build ##
