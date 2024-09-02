@@ -63,6 +63,7 @@
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
+  <depend>butia_vision_msgs</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
